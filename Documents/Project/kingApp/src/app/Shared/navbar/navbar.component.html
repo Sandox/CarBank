@@ -1,0 +1,37 @@
+
+  <header>
+    <tr>
+      <td>Username :  {{name |uppercase}}  </td>
+    </tr>
+
+
+    <tr>
+      <td>Date : {{todayDate | date }}</td>
+    </tr>
+
+    <app-button color="purple" text="Add User Details"
+                routerLink="/users" (btnClick)="firstScreen()"></app-button>
+
+                <a class="button" routerLink="/product-list" routerLinkActive="activebutton">Car Lot</a>
+
+    <app-button color="purple" text="Edit Car Info"
+                routerLink="/" (btnClick)="anotherLink()"></app-button>
+
+
+      <div class="editUser">
+          <label for="name">Edit Username: </label>
+          <input [(ngModel)]="name" (keyup.enter)="firstScreen()" name="username">
+      </div>
+
+      <app-button color="red" text="Logout Here"
+                  routerLink="**" (btnClick)="Logout()"></app-button>
+
+  </header>
+
+
+
+
+
+
+
+

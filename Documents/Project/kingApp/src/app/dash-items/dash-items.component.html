@@ -1,0 +1,39 @@
+<div class="container">
+  <table id="carsLot" class="table table-striped">
+    <thead>
+        <tr>
+          <th>Car Name</th>
+          <th>Model Year</th>
+          <th>Car Color </th>
+          <th>Image </th>
+          <th>Price </th>
+          <th>Action </th>
+
+        </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let allCars of Cars">
+        <td hidden="hidden">{{ allCars.id }}</td>
+        <td>{{ allCars.carName }}</td>
+        <td>{{ allCars.year }}</td>
+        <td>{{ allCars.color }}</td>
+        <td class="w-25">
+          <img [src]="allCars.image" class="img-fluid img-thumbnail" alt="Sheep" />
+        </td>
+        <td>{{ allCars.price }}</td>
+        <td>
+          <app-button color="lime" text="Mark Car as Sold"
+                      (btnClick)="carSold()"></app-button>
+          <pre></pre>
+          <app-button color="purple" text="View more Info"
+                      (btnClick)="getInfoFromService1()"></app-button>
+        <td>
+      <ul class="list-group">
+        <li *ngFor="let info of car1 " class="list-group-info">{{info}}</li>
+    </ul>
+  </td>
+
+      </tr>
+    </tbody>
+  </table>
+</div>
